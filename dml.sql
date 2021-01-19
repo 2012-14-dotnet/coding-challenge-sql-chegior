@@ -26,4 +26,14 @@ WHERE o.CustomerID = c.ID
 AND c.ID = 
 (SELECT ID 
 FROM codeDB.Customer
-WHERE FirstName ='Tina' AND LastName = 'Smith')
+WHERE FirstName ='Tina' AND LastName = 'Smith');
+
+SELECT SUM(Products.Price) 
+FROM Products 
+INNER JOIN Ordes 
+ON Products.ID = Order.ProductID
+WHERE Products.Name = 'Iphone';
+
+UPDATE codeDB.Products
+SET Price = '250'
+WHERE Name = 'Iphone';
